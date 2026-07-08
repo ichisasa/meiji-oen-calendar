@@ -1,1 +1,14 @@
 
+name: Daily Check
+
+on:
+  schedule:
+    - cron: "0 21 * * *"  # 毎日 日本時間6:00 に実行（UTC基準のため21:00）
+  workflow_dispatch:        # 手動実行ボタンも使えるようにする
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo "元父母の会カレンダー、自動実行のテストです $(date)"
