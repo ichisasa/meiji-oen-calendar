@@ -19,6 +19,8 @@ from datetime import date, datetime
 import requests
 from bs4 import BeautifulSoup
 
+from normalize_team import TeamNameResolver, normalize as normalize_text
+
 BASE_URL = "https://meisupo.net"
 LIST_URL = f"{BASE_URL}/result/"
 LIST_PAGE_URL = f"{BASE_URL}/result/page/{{page}}/"
@@ -132,10 +134,29 @@ def parse_detail_page(html: str):
     return info
 
 
+def load_venue_addresses(path="data/venues.csv"):
+    """会場名 -> 住所 の対応表を読み込む。見つからなければ空の辞書を返す。"""
+    addresses = {}
+    try:
+        with open(path, encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                name = (row.get("venue_name") or "").strip()
+                addr = (row.get("venue_address") or "").strip()
+                if name:
+                    addresses[normalize_text(name)] = addr
+    except FileNotFoundError:
+        print(f"[警告] {path} が見つからないため会場住所の補完はスキップします", file=sys.stderr)
+    return addresses
+
+
 def collect_upcoming_events(today: date = None):
     """一覧ページを巡回し、本日以降の日付のイベントについて詳細情報を集める。"""
     if today is None:
         today = date.today()
+
+    resolver = TeamNameResolver(clubs_path="data/clubs.csv", aliases_path="data/team_aliases.csv")
+    venue_addresses = load_venue_addresses("data/venues.csv")
 
     all_items = []
     for page in range(1, MAX_LIST_PAGES + 1):
@@ -155,15 +176,24 @@ def collect_upcoming_events(today: date = None):
         print(f"[detail] {item['detail_url']}", file=sys.stderr)
         detail_html = fetch(item["detail_url"])
         info = parse_detail_page(detail_html)
+
+        # 明スポの表記（例:「水泳（競泳）」）を団体マスターの正式名称に変換する。
+        # 解決できなければ「体育会 ○○」の形のまま残し、後段のチェックで拾えるようにする。
+        guess = f"体育会 {item['club']}部" if item["club"] else ""
+        team = resolver.resolve(guess) or resolver.resolve(item["club"]) or guess
+
+        venue = info.get("会場", "")
+        venue_address = venue_addresses.get(normalize_text(venue), "")
+
         events.append(
             {
                 "start_date_raw": item["date"].strftime("%Y/%m/%d"),
                 "start_time": "",
                 "end_date_raw": "",
-                "team": f"体育会 {item['club']}部" if item["club"] else "",
+                "team": team,
                 "event_name": item["title"],
-                "venue": info.get("会場", ""),
-                "venue_address": "",
+                "venue": venue,
+                "venue_address": venue_address,
                 "url": item["detail_url"],
                 "source": "meisupo.net",
             }
