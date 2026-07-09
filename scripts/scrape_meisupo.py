@@ -25,7 +25,7 @@ LIST_PAGE_URL = f"{BASE_URL}/result/page/{{page}}/"
 
 # サイトへの配慮: 誰からのアクセスか分かるUser-Agentにし、リクエスト間隔を空ける
 HEADERS = {
-    "User-Agent": "meiji-oen-calendar-bot/1.0 (+https://github.com/ichisasa/meiji-oen-calendar; 明治大学元父母の会 応援カレンダー自動収集)"
+    "User-Agent": "meiji-oen-calendar-bot/1.0 (+https://github.com/ichisasa/meiji-oen-calendar)"
 }
 REQUEST_INTERVAL_SEC = 1.5  # 1リクエストごとの待機時間（サーバーへの配慮）
 
