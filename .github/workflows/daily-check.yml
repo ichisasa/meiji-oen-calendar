@@ -1,4 +1,3 @@
-
 name: Daily Check
 
 on:
@@ -6,9 +5,31 @@ on:
     - cron: "0 21 * * *"  # 毎日 日本時間6:00 に実行（UTC基準のため21:00）
   workflow_dispatch:        # 手動実行ボタンも使えるようにする
 
+permissions:
+  contents: write   # 取得したデータをリポジトリにコミットするために必要
+
 jobs:
-  hello:
+  scrape:
     runs-on: ubuntu-latest
     steps:
-      - name: Say hello
-        run: echo "元父母の会カレンダー、自動実行のテストです $(date)"
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run meisupo.net scraper
+        run: python scripts/scrape_meisupo.py
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/meisupo_events.csv
+          git diff --staged --quiet || git commit -m "Update meisupo.net events data (automated)"
+          git push
