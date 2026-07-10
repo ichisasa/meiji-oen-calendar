@@ -134,6 +134,22 @@ def parse_detail_page(html: str):
     return info
 
 
+def load_venue_aliases(path="data/venue_aliases.csv"):
+    """会場名の表記ゆれ辞書（alias -> canonical）を読み込む。"""
+    alias_map = {}
+    try:
+        with open(path, encoding="utf-8-sig") as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                alias = (row.get("alias") or "").strip()
+                canonical = (row.get("canonical") or "").strip()
+                if alias:
+                    alias_map[normalize_text(alias)] = canonical
+    except FileNotFoundError:
+        print(f"[警告] {path} が見つからないため会場名の表記ゆれ吸収はスキップします", file=sys.stderr)
+    return alias_map
+
+
 def load_venue_addresses(path="data/venues.csv"):
     """会場名 -> 住所 の対応表を読み込む。見つからなければ空の辞書を返す。"""
     addresses = {}
@@ -150,6 +166,21 @@ def load_venue_addresses(path="data/venues.csv"):
     return addresses
 
 
+def resolve_venue_address(venue: str, venue_addresses: dict, venue_aliases: dict) -> str:
+    """会場名から住所を引く。表記ゆれ辞書で正式名称に変換してから探す。"""
+    if not venue:
+        return ""
+    norm = normalize_text(venue)
+    # 1. 会場マスターと直接一致
+    if norm in venue_addresses:
+        return venue_addresses[norm]
+    # 2. 表記ゆれ辞書で正式名称に変換してから再度探す
+    canonical = venue_aliases.get(norm)
+    if canonical:
+        return venue_addresses.get(normalize_text(canonical), "")
+    return ""
+
+
 def collect_upcoming_events(today: date = None):
     """一覧ページを巡回し、本日以降の日付のイベントについて詳細情報を集める。"""
     if today is None:
@@ -157,6 +188,7 @@ def collect_upcoming_events(today: date = None):
 
     resolver = TeamNameResolver(clubs_path="data/clubs.csv", aliases_path="data/team_aliases.csv")
     venue_addresses = load_venue_addresses("data/venues.csv")
+    venue_aliases = load_venue_aliases("data/venue_aliases.csv")
 
     all_items = []
     for page in range(1, MAX_LIST_PAGES + 1):
@@ -183,7 +215,7 @@ def collect_upcoming_events(today: date = None):
         team = resolver.resolve(guess) or resolver.resolve(item["club"]) or guess
 
         venue = info.get("会場", "")
-        venue_address = venue_addresses.get(normalize_text(venue), "")
+        venue_address = resolve_venue_address(venue, venue_addresses, venue_aliases)
 
         events.append(
             {
