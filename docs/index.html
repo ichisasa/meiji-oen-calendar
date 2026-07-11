@@ -1,1 +1,216 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>応援カレンダー | 明治大学元父母の会</title>
+<style>
+  :root {
+    --shikon: #4b2e83;      /* 紫紺 */
+    --shikon-dark: #34205c;
+    --gold: #c9a227;
+    --bg: #f7f5f2;
+    --card-bg: #ffffff;
+    --text: #2b2b2b;
+    --text-muted: #6b6b6b;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    background: linear-gradient(135deg, var(--shikon), var(--shikon-dark));
+    color: #fff;
+    padding: 2rem 1.5rem 1.5rem;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0 0 0.3rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.05em;
+  }
+  header p {
+    margin: 0;
+    font-size: 0.85rem;
+    color: #e6dfc9;
+  }
+  main {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 1.2rem 1rem 3rem;
+  }
+  .month-heading {
+    color: var(--shikon);
+    font-weight: bold;
+    font-size: 1.05rem;
+    margin: 1.6rem 0 0.6rem;
+    border-left: 5px solid var(--gold);
+    padding-left: 0.5rem;
+  }
+  .card {
+    background: var(--card-bg);
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    padding: 0.9rem 1rem;
+    margin-bottom: 0.7rem;
+    display: flex;
+    gap: 0.9rem;
+    align-items: flex-start;
+  }
+  .date-badge {
+    flex: 0 0 auto;
+    width: 3.4rem;
+    text-align: center;
+    background: var(--shikon);
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.4rem 0.2rem;
+  }
+  .date-badge .day {
+    font-size: 1.3rem;
+    font-weight: bold;
+    line-height: 1;
+  }
+  .date-badge .wd {
+    font-size: 0.65rem;
+    color: var(--gold);
+  }
+  .card-body { flex: 1; min-width: 0; }
+  .team {
+    font-size: 0.72rem;
+    color: var(--gold);
+    font-weight: bold;
+    letter-spacing: 0.03em;
+  }
+  .event-name {
+    font-size: 0.98rem;
+    font-weight: bold;
+    margin: 0.15rem 0 0.3rem;
+  }
+  .meta {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+  .meta a {
+    color: var(--shikon);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--shikon);
+  }
+  .source-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    background: #eee;
+    color: var(--text-muted);
+    border-radius: 4px;
+    padding: 0.05rem 0.4rem;
+    margin-left: 0.4rem;
+  }
+  .empty {
+    text-align: center;
+    color: var(--text-muted);
+    padding: 3rem 1rem;
+  }
+  footer {
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    padding: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>明治大学 応援カレンダー</h1>
+  <p>明治大学元父母の会 — 応援は、卒業しない。</p>
+</header>
+
+<main id="app">
+  <p class="empty">読み込み中...</p>
+</main>
+
+<footer>
+  日程・会場は主催者発表を優先してください。誤りに気づいた場合はご連絡ください。<br>
+  日程データの一部は明大スポーツ新聞部の記事を参照しています。
+</footer>
+
+<script>
+const WEEKDAYS = ["日","月","火","水","木","金","土"];
+
+async function main() {
+  const app = document.getElementById("app");
+  let events;
+  try {
+    const res = await fetch("events.json");
+    events = await res.json();
+  } catch (e) {
+    app.innerHTML = '<p class="empty">データの読み込みに失敗しました。</p>';
+    return;
+  }
+
+  if (!events.length) {
+    app.innerHTML = '<p class="empty">現在、公開予定のイベントはありません。</p>';
+    return;
+  }
+
+  let html = "";
+  let currentMonth = "";
+
+  for (const ev of events) {
+    const d = new Date(ev.date + "T00:00:00");
+    const monthLabel = `${d.getFullYear()}年${d.getMonth() + 1}月`;
+    if (monthLabel !== currentMonth) {
+      html += `<div class="month-heading">${monthLabel}</div>`;
+      currentMonth = monthLabel;
+    }
+
+    const day = d.getDate();
+    const wd = WEEKDAYS[d.getDay()];
+    const venueLine = ev.venue
+      ? `<div>📍 ${escapeHtml(ev.venue)}</div>`
+      : "";
+    const timeLine = ev.time ? ` ${escapeHtml(ev.time)}〜` : "";
+    const urlLine = ev.url
+      ? `<div><a href="${escapeHtml(ev.url)}" target="_blank" rel="noopener">詳細・最新情報を確認</a></div>`
+      : "";
+    const sourceTag = ev.source
+      ? `<span class="source-tag">${escapeHtml(ev.source)}</span>`
+      : "";
+
+    html += `
+      <div class="card">
+        <div class="date-badge">
+          <div class="day">${day}</div>
+          <div class="wd">${wd}曜</div>
+        </div>
+        <div class="card-body">
+          <div class="team">${escapeHtml(ev.team)}${sourceTag}</div>
+          <div class="event-name">${escapeHtml(ev.event_name)}${timeLine}</div>
+          <div class="meta">
+            ${venueLine}
+            ${urlLine}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  app.innerHTML = html;
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, (c) => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+  }[c]));
+}
+
+main();
+</script>
+
+</body>
+</html>
