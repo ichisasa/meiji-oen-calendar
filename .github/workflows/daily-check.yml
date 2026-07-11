@@ -6,7 +6,8 @@ on:
   workflow_dispatch:        # 手動実行ボタンも使えるようにする
 
 permissions:
-  contents: write   # 取得したデータをリポジトリにコミットするために必要
+  contents: write        # ブランチへのコミットに必要
+  pull-requests: write   # Pull Requestの作成・更新に必要
 
 jobs:
   scrape:
@@ -26,10 +27,24 @@ jobs:
       - name: Run meisupo.net scraper
         run: python scripts/scrape_meisupo.py
 
-      - name: Commit and push if changed
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/meisupo_events.csv
-          git diff --staged --quiet || git commit -m "Update meisupo.net events data (automated)"
-          git push
+      - name: Run missing-club check
+        run: python scripts/check_missing_clubs.py
+        continue-on-error: true  # チェック結果はあくまで参考情報なので、失敗しても全体を止めない
+
+      - name: Create Pull Request for review
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "Update meisupo.net events data (automated)"
+          title: "📅 自動データ更新 (${{ github.run_id }})"
+          body: |
+            明スポ(meisupo.net)から自動収集した最新データです。
+
+            マージ前に以下を確認してください:
+            - 会場や日程がおかしい行がないか(明スポ側の記事ミスの可能性あり)
+            - `data/missing_clubs_report.md` に新しい「未解決の団体名」が出ていないか
+
+            問題なければマージ、修正が必要ならこのPR上で直接編集してからマージしてください。
+          branch: automated/data-update
+          delete-branch: true
+          labels: |
+            automated-data
