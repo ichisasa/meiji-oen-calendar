@@ -27,6 +27,9 @@ jobs:
       - name: Run meisupo.net scraper
         run: python scripts/scrape_meisupo.py
 
+      - name: Build public calendar
+        run: python scripts/build_public_calendar.py
+
       - name: Run missing-club check
         run: python scripts/check_missing_clubs.py
         continue-on-error: true  # チェック結果はあくまで参考情報なので、失敗しても全体を止めない
