@@ -154,13 +154,18 @@ def collect_events(default_year: int):
         time.sleep(REQUEST_INTERVAL_SEC)
 
         for item in items:
+            event_name = item.get("event_name", "")
+            opponent = item.get("opponent", "")
+            if opponent:
+                event_name = f"{event_name} 対{opponent}"
+
             events.append(
                 {
                     "start_date_raw": (item.get("date") or "").replace("-", "/"),
                     "start_time": "",
                     "end_date_raw": "",
                     "team": src["team"] or "",
-                    "event_name": item.get("event_name", ""),
+                    "event_name": event_name,
                     "venue": item.get("venue", ""),
                     "venue_address": "",
                     "url": src["url"],
