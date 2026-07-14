@@ -17,6 +17,7 @@
 """
 
 import csv
+import io
 import json
 import os
 import re
@@ -25,6 +26,7 @@ import time
 
 import requests
 from bs4 import BeautifulSoup
+from pypdf import PdfReader
 
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.1-flash-lite")
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY", "")
@@ -65,13 +67,27 @@ PROMPT_TEMPLATE = """\
 
 
 def fetch_page_text(url: str) -> str:
-    resp = requests.get(url, headers=HEADERS, timeout=20)
+    resp = requests.get(url, headers=HEADERS, timeout=30)
     resp.raise_for_status()
-    soup = BeautifulSoup(resp.text, "html.parser")
-    for tag in soup(["script", "style", "nav", "footer"]):
-        tag.decompose()
-    text = soup.get_text(separator="\n", strip=True)
+
+    is_pdf = url.lower().endswith(".pdf") or "application/pdf" in resp.headers.get("Content-Type", "")
+    if is_pdf:
+        text = extract_pdf_text(resp.content)
+    else:
+        soup = BeautifulSoup(resp.text, "html.parser")
+        for tag in soup(["script", "style", "nav", "footer"]):
+            tag.decompose()
+        text = soup.get_text(separator="\n", strip=True)
+
     return text[:MAX_PAGE_CHARS]
+
+
+def extract_pdf_text(pdf_bytes: bytes) -> str:
+    reader = PdfReader(io.BytesIO(pdf_bytes))
+    pages_text = []
+    for page in reader.pages:
+        pages_text.append(page.extract_text() or "")
+    return "\n".join(pages_text)
 
 
 def call_gemini(page_text: str, default_year: int) -> list:
