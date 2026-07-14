@@ -109,7 +109,7 @@ def to_json_ready(items):
 
 if __name__ == "__main__":
     resolver = TeamNameResolver(clubs_path="data/clubs.csv", aliases_path="data/team_aliases.csv")
-    upcoming = build_calendar(["data/events.csv", "data/meisupo_events.csv", "data/big6_baseball_events.csv"], resolver)
+    upcoming = build_calendar(["data/events.csv", "data/meisupo_events.csv", "data/big6_baseball_events.csv","data/ai_scraped_events.csv"], resolver)
 
     with open("docs/events.json", "w", encoding="utf-8") as f:
         json.dump(to_json_ready(upcoming), f, ensure_ascii=False, indent=2)
