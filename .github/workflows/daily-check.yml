@@ -9,6 +9,7 @@ permissions:
   contents: write        # ブランチへのコミットに必要
   pull-requests: write   # Pull Requestの作成・更新に必要
 
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -30,6 +31,12 @@ jobs:
       - name: Run big6.gr.jp scraper (硬式野球部)
         run: python scripts/scrape_big6.py
 
+      - name: Run AI-based extraction (experimental)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/ai_extract_events.py
+        continue-on-error: true
+
       - name: Build public calendar
         run: python scripts/build_public_calendar.py
 
@@ -44,11 +51,9 @@ jobs:
           title: "📅 自動データ更新 (${{ github.run_id }})"
           body: |
             明スポ(meisupo.net)から自動収集した最新データです。
-
             マージ前に以下を確認してください:
             - 会場や日程がおかしい行がないか(明スポ側の記事ミスの可能性あり)
             - `data/missing_clubs_report.md` に新しい「未解決の団体名」が出ていないか
-
             問題なければマージ、修正が必要ならこのPR上で直接編集してからマージしてください。
           branch: automated/data-update
           delete-branch: true
