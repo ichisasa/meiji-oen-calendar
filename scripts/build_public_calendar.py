@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
@@ -15,6 +14,7 @@ import sys
 from datetime import date, datetime
 
 from normalize_team import TeamNameResolver
+from scrape_meisupo import load_venue_addresses, load_venue_aliases, resolve_venue_address
 
 
 def parse_loose_date(text: str):
@@ -29,7 +29,7 @@ def parse_loose_date(text: str):
     return None
 
 
-def load_events_csv(path, resolver):
+def load_events_csv(path, resolver, venue_addresses, venue_aliases):
     items = []
     try:
         with open(path, encoding="utf-8-sig") as f:
@@ -39,6 +39,10 @@ def load_events_csv(path, resolver):
                 if not team_raw:
                     continue
                 d = parse_loose_date(row.get("start_date_raw"))
+                venue = (row.get("venue") or "").strip()
+                venue_address = (row.get("venue_address") or "").strip()
+                if not venue_address and venue:
+                    venue_address = resolve_venue_address(venue, venue_addresses, venue_aliases)
                 items.append(
                     {
                         "date": d,
@@ -46,8 +50,8 @@ def load_events_csv(path, resolver):
                         "time": (row.get("start_time") or "").strip(),
                         "team": resolver.resolve(team_raw) or team_raw,
                         "event_name": (row.get("event_name") or "").strip(),
-                        "venue": (row.get("venue") or "").strip(),
-                        "venue_address": (row.get("venue_address") or "").strip(),
+                        "venue": venue,
+                        "venue_address": venue_address,
                         "url": (row.get("url") or "").strip(),
                         "source": row.get("source", "元父母の会 手動収集"),
                     }
@@ -61,9 +65,12 @@ def build_calendar(sources, resolver, today=None):
     if today is None:
         today = date.today()
 
+    venue_addresses = load_venue_addresses("data/venues.csv")
+    venue_aliases = load_venue_aliases("data/venue_aliases.csv")
+
     all_items = []
     for path in sources:
-        all_items.extend(load_events_csv(path, resolver))
+        all_items.extend(load_events_csv(path, resolver, venue_addresses, venue_aliases))
 
     # URLが同じものは重複とみなし、1件にまとめる
     seen_urls = set()
@@ -109,7 +116,15 @@ def to_json_ready(items):
 
 if __name__ == "__main__":
     resolver = TeamNameResolver(clubs_path="data/clubs.csv", aliases_path="data/team_aliases.csv")
-    upcoming = build_calendar(["data/events.csv", "data/meisupo_events.csv", "data/big6_baseball_events.csv","data/ai_scraped_events.csv"], resolver)
+    upcoming = build_calendar(
+        [
+            "data/events.csv",
+            "data/meisupo_events.csv",
+            "data/big6_baseball_events.csv",
+            "data/ai_scraped_events.csv",
+        ],
+        resolver,
+    )
 
     with open("docs/events.json", "w", encoding="utf-8") as f:
         json.dump(to_json_ready(upcoming), f, ensure_ascii=False, indent=2)
