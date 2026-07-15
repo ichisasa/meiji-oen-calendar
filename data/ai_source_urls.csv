@@ -3,3 +3,6 @@ team,url,note
 ラグビー部,https://www.meijirugby.jp/matches/,明治大学ラグビー部公式サイトの試合日程・結果ページ。対抗戦（8月末〜12月頃）の日程が発表されると自動的に拾えるようになる見込み
 バスケットボール部（男子）,https://meiji-basketball.com/fixtures-results/,明治大学男子バスケットボール部公式サイト。「予定」ステータスの試合が確認できる
 バレーボール部,https://meiji-volley.com/game,明治大学バレーボール部公式サイト。試合日時・会場・対戦相手が表形式で並ぶ
+競走部,https://meiji-kyoso.com/schedule,明治大学競走部公式サイトの「今後の予定」。個人戦中心で出場選手名も掲載されている
+硬式庭球部,https://meiji-tennis.com/game,明治大学硬式庭球部公式サイト。日時・会場・結果詳細リンクが表形式
+卓球部,http://www.meiji-tt.net/gametabletennis_list/,明治大学卓球部公式サイト。2026年度シーズン全体が1ページの表にまとまっている（連盟サイトkanto-sttf.jpより格段に扱いやすい）
