@@ -1,25 +1,5 @@
 [
   {
-    "date": "2026-07-11",
-    "time": "18:00",
-    "team": "応援団",
-    "event_name": "第50回合同演奏会",
-    "venue": "府中の森芸術劇場",
-    "venue_address": "東京都府中市浅間町1-2",
-    "url": "https://www.instagram.com/p/DZY8RI9E-1Y/?igsh=MTY5Mm90em00bHZscQ==",
-    "source": "元父母の会 手動収集"
-  },
-  {
-    "date": "2026-07-12",
-    "time": "17:00",
-    "team": "ラクロス部（女子）",
-    "event_name": "第38回関東学生ラクロスリーグ戦　女子",
-    "venue": "学習院大学北グラウンド",
-    "venue_address": "東京都豊島区目白1丁目5−1",
-    "url": "https://www.lacrosse.gr.jp/event/2026-collegiate-leagues/#anc03",
-    "source": "元父母の会 手動収集"
-  },
-  {
     "date": "2026-07-18",
     "time": "",
     "team": "ラクロス部（男子）",
@@ -48,6 +28,16 @@
     "venue_address": "東京都品川区八潮4-1-19",
     "url": "https://meisupo.net/result/page/2/",
     "source": "元父母の会 手動収集"
+  },
+  {
+    "date": "2026-07-19",
+    "time": "",
+    "team": "競走部",
+    "event_name": "【競走部】第76回法政大学対明治大学定期陸上競技大会",
+    "venue": "法政大学多摩校地",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51721/",
+    "source": "meisupo.net"
   },
   {
     "date": "2026-07-25",
@@ -110,6 +100,26 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-08-13",
+    "time": "",
+    "team": "水泳部（水球）",
+    "event_name": "日本選手権",
+    "venue": "千葉県国際総合水泳場",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51630/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-14",
+    "time": "",
+    "team": "水泳部（水球）",
+    "event_name": "日本選手権",
+    "venue": "千葉県国際総合水泳場",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51632/",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-08-15",
     "time": "",
     "team": "バスケットボール部（男子）",
@@ -118,6 +128,26 @@
     "venue_address": "北海道札幌市中央区北4条東6丁目2",
     "url": "https://www.instagram.com/p/DXOohdVgati/?utm_source=ig_web_copy_link&igsh=NTc4MTIwNjQ2YQ==",
     "source": "元父母の会 手動収集"
+  },
+  {
+    "date": "2026-08-15",
+    "time": "",
+    "team": "水泳部（水球）",
+    "event_name": "日本選手権",
+    "venue": "千葉県国際総合水泳場",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51634/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-16",
+    "time": "",
+    "team": "水泳部（水球）",
+    "event_name": "日本選手権",
+    "venue": "千葉県国際総合水泳場",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51636/",
+    "source": "meisupo.net"
   },
   {
     "date": "2026-08-18",
@@ -160,6 +190,26 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-08-22",
+    "time": "",
+    "team": "アーチェリー部",
+    "event_name": "関東学生個人選手権大会 本戦",
+    "venue": "夢の島公園アーチェリー場",
+    "venue_address": "東京都江東区夢の島2-1-4",
+    "url": "https://meisupo.net/result/51640/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-23",
+    "time": "",
+    "team": "アーチェリー部",
+    "event_name": "関東学生個人選手権大会 本戦",
+    "venue": "夢の島公園アーチェリー場",
+    "venue_address": "東京都江東区夢の島2-1-4",
+    "url": "https://meisupo.net/result/51642/",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-08-27",
     "time": "14:30",
     "team": "バスケットボール部（男子）",
@@ -180,6 +230,16 @@
     "source": "元父母の会 手動収集"
   },
   {
+    "date": "2026-08-28",
+    "time": "",
+    "team": "自転車部",
+    "event_name": "第81回全日本大学対抗選手権大会（トラック）",
+    "venue": "千葉JPFドーム",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51644/",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-08-29",
     "time": "",
     "team": "ラクロス部（男子）",
@@ -187,6 +247,16 @@
     "venue": "駒沢オリンピック公園第二球技場",
     "venue_address": "東京都世田谷区駒沢公園1",
     "url": "https://meisupo.net/result/50628/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-29",
+    "time": "",
+    "team": "自転車部",
+    "event_name": "第81回全日本大学対抗選手権大会（トラック）（自転車）",
+    "venue": "千葉JPFドーム",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51646/",
     "source": "meisupo.net"
   },
   {
@@ -207,6 +277,16 @@
     "venue": "駒沢オリンピック公園第一球技場",
     "venue_address": "東京都世田谷区駒沢公園1",
     "url": "https://meisupo.net/result/50622/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-30",
+    "time": "",
+    "team": "自転車部",
+    "event_name": "第81回全日本大学対抗選手権大会（トラック）",
+    "venue": "千葉JPFドーム",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51648/",
     "source": "meisupo.net"
   },
   {
@@ -360,6 +440,26 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-09-05",
+    "time": "",
+    "team": "自転車部",
+    "event_name": "第81回全日本大学対抗選手権大会（ロード）",
+    "venue": "群馬サイクルスポーツセンター",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51650/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-05",
+    "time": "",
+    "team": "競走部",
+    "event_name": "【競走部】第95回日本学生陸上競技対校選手権大会",
+    "venue": "日産スタジアム",
+    "venue_address": "神奈川県横浜市港北区小机町3300",
+    "url": "https://meisupo.net/result/51723/",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-09-06",
     "time": "",
     "team": "水泳部（競泳）",
@@ -390,6 +490,36 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-09-06",
+    "time": "",
+    "team": "自転車部",
+    "event_name": "第81回全日本大学対抗選手権大会（ロード）",
+    "venue": "群馬サイクルスポーツセンター",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51652/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-06",
+    "time": "",
+    "team": "柔道部",
+    "event_name": "東京学生体重別選手権",
+    "venue": "日本武道館",
+    "venue_address": "東京都千代田区北の丸公園2-3",
+    "url": "https://meisupo.net/result/51688/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-06",
+    "time": "",
+    "team": "競走部",
+    "event_name": "【競走部】第95回日本学生陸上競技対校選手権大会",
+    "venue": "日産スタジアム",
+    "venue_address": "神奈川県横浜市港北区小机町3300",
+    "url": "https://meisupo.net/result/51725/",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-09-07",
     "time": "",
     "team": "競走部",
@@ -397,6 +527,36 @@
     "venue": "日産スタジアム",
     "venue_address": "神奈川県横浜市港北区小机町3300",
     "url": "https://meisupo.net/result/49237/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-07",
+    "time": "",
+    "team": "競走部",
+    "event_name": "【競走部】第95回日本学生陸上競技対校選手権大会",
+    "venue": "日産スタジアム",
+    "venue_address": "神奈川県横浜市港北区小机町3300",
+    "url": "https://meisupo.net/result/51727/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-12",
+    "time": "",
+    "team": "柔道部",
+    "event_name": "全日本学生体重別選手権",
+    "venue": "埼玉県立武道館（リプロ武道館）",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51690/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-12",
+    "time": "",
+    "team": "馬術部",
+    "event_name": "関東学生秋季競技大会",
+    "venue": "津久井馬術競技場",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51696/",
     "source": "meisupo.net"
   },
   {
@@ -417,6 +577,26 @@
     "venue": "江の島ヨットハーバー",
     "venue_address": "神奈川県藤沢市江の島1丁目12−2",
     "url": "https://meisupo.net/result/49211/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-13",
+    "time": "",
+    "team": "柔道部",
+    "event_name": "全日本学生体重別選手権",
+    "venue": "日本武道館",
+    "venue_address": "東京都千代田区北の丸公園2-3",
+    "url": "https://meisupo.net/result/51693/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-13",
+    "time": "",
+    "team": "馬術部",
+    "event_name": "関東学生秋季競技大会",
+    "venue": "津久井馬術競技場",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51698/",
     "source": "meisupo.net"
   },
   {
