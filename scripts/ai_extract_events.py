@@ -53,6 +53,7 @@ PROMPT_TEMPLATE = """\
 [
   {{
     "date": "YYYY-MM-DD形式の日付。年が不明な場合は{default_year}年と仮定する",
+    "time": "HH:MM形式の開始時刻。分からなければ空文字",
     "event_name": "大会名・試合名",
     "opponent": "対戦相手（分かれば。個人戦や対戦相手なしの大会は空文字）",
     "venue": "会場名（分かれば。不明なら空文字）",
@@ -162,7 +163,7 @@ def collect_events(default_year: int):
             events.append(
                 {
                     "start_date_raw": (item.get("date") or "").replace("-", "/"),
-                    "start_time": "",
+                    "start_time": item.get("time", ""),
                     "end_date_raw": "",
                     "team": src["team"] or "",
                     "event_name": event_name,
