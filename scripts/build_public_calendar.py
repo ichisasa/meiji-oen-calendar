@@ -61,6 +61,27 @@ def load_events_csv(path, resolver, venue_addresses, venue_aliases):
     return items
 
 
+def attach_official_urls(items):
+    """
+    明スポ(meisupo.net)由来のイベントに対して、同じ（団体・日付）の情報が
+    公式サイト系ソース（events.csv/big6/AI抽出）にもあれば、そちらのURLを
+    official_url として付与する。見つからなければ空文字のまま。
+    """
+    official_lookup = {}
+    for i in items:
+        if i["source"] != "meisupo.net" and i["date"] is not None:
+            key = (i["team"], i["date"])
+            official_lookup.setdefault(key, i["url"])
+
+    for i in items:
+        if i["source"] == "meisupo.net":
+            i["official_url"] = official_lookup.get((i["team"], i["date"]), "")
+        else:
+            # 明スポ以外はURL自体がすでに公式寄りの情報源なので、そのまま使う
+            i["official_url"] = i["url"]
+    return items
+
+
 def build_calendar(sources, resolver, today=None):
     if today is None:
         today = date.today()
@@ -84,6 +105,7 @@ def build_calendar(sources, resolver, today=None):
 
     with_date = [i for i in deduped if i["date"] is not None]
     without_date = len(deduped) - len(with_date)
+    with_date = attach_official_urls(with_date)
 
     upcoming = [i for i in with_date if i["date"] >= today]
     upcoming.sort(key=lambda i: (i["date"], i["time"]))
@@ -108,6 +130,7 @@ def to_json_ready(items):
                 "venue": i["venue"],
                 "venue_address": i["venue_address"],
                 "url": i["url"],
+                "official_url": i.get("official_url", ""),
                 "source": i["source"],
             }
         )
