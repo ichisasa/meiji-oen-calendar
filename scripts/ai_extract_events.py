@@ -47,6 +47,12 @@ PROMPT_TEMPLATE = """\
 以下は、あるスポーツ連盟・団体の公式サイトのページ本文です。
 この中から「明治大学」が関わる試合・大会の情報だけを抜き出してください。
 
+重要な条件:
+- 本日（{today}）以降に開催される、またはまだ結果が出ていない試合・大会だけを対象にしてください。
+- 既に終了した過去のシーズン（例:2025年度の結果一覧など）は対象外です。ページに「結果」や
+  スコアが明記されている、明らかに終わった試合は抜き出さないでください。
+- 年の表記が無く判断できない場合のみ、{default_year}年と仮定してください。
+
 出力は必ず次の形式のJSON配列のみとしてください。前置きや説明文、Markdownのコードフェンスは一切不要です。
 情報が見つからない場合は空配列 [] だけを返してください。
 
@@ -91,12 +97,12 @@ def extract_pdf_text(pdf_bytes: bytes) -> str:
     return "\n".join(pages_text)
 
 
-def call_gemini(page_text: str, default_year: int) -> list:
+def call_gemini(page_text: str, default_year: int, today: str) -> list:
     if not GEMINI_API_KEY:
         print("[警告] GEMINI_API_KEY が設定されていません。スキップします。", file=sys.stderr)
         return []
 
-    prompt = PROMPT_TEMPLATE.format(page_text=page_text, default_year=default_year)
+    prompt = PROMPT_TEMPLATE.format(page_text=page_text, default_year=default_year, today=today)
     body = {"contents": [{"parts": [{"text": prompt}]}]}
     headers = {"Content-Type": "application/json", "x-goog-api-key": GEMINI_API_KEY}
 
@@ -140,7 +146,7 @@ def load_sources(path="data/ai_source_urls.csv"):
     return sources
 
 
-def collect_events(default_year: int):
+def collect_events(default_year: int, today: str):
     sources = load_sources()
     events = []
     for src in sources:
@@ -151,7 +157,7 @@ def collect_events(default_year: int):
             print(f"[警告] 取得失敗: {src['url']} ({e})", file=sys.stderr)
             continue
 
-        items = call_gemini(text, default_year)
+        items = call_gemini(text, default_year, today)
         time.sleep(REQUEST_INTERVAL_SEC)
 
         for item in items:
@@ -189,9 +195,11 @@ def save_csv(events, path):
 
 if __name__ == "__main__":
     import datetime
-    default_year = datetime.date.today().year
+    today_date = datetime.date.today()
+    default_year = today_date.year
+    today_str = today_date.isoformat()
 
-    events = collect_events(default_year)
+    events = collect_events(default_year, today_str)
     out_path = "data/ai_scraped_events.csv"
     save_csv(events, out_path)
     print(f"{len(events)} 件をAIで抽出し {out_path} に保存しました", file=sys.stderr)
