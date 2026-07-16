@@ -39,7 +39,11 @@
 - [ ] **バスケットボール部（女子）**：専用の公式サイトは見当たらなかった。X: `meijibasketball`
       （男子と共通アカウントの可能性）、Instagram: `basketball_meiji`。上記のmeijinow経由か、
       instagram_accounts.csv側での手動巡回が現実的
-- [ ] **ホッケー部**：`myhockey.jp`が過去データに登場していた。robots.txt・構造を確認
+- [ ] **ホッケー部**：`myhockey.jp`は明スポとは独立したホッケー専門メディアで有望。
+      ただし現時点(2026年7月)は春季リーグが終了済み・秋季は未発表のシーズン端境期。
+      `https://myhockey.jp/kanto-univ/`（関東学生リーグの大会ページ）を秋季発表後に
+      AI抽出の対象として試すこと。部自身のサイト(`creative3131.wixsite.com/meiji-hockey`)
+      には明確な日程ページが見当たらなかった。
 - [ ] **柔道部**：`gakujuren.or.jp`（学生柔道連盟）を確認
 - [ ] **ハンドボール部**：`asahi-net.or.jp/~zb3m-knk/`のページが過去データに頻出。個人運営サイトの可能性がありrobots.txt要確認
 
