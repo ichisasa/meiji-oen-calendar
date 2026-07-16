@@ -1,5 +1,25 @@
 [
   {
+    "date": "2026-07-16",
+    "time": "",
+    "team": "サッカー部",
+    "event_name": "JR東日本カップ2026 第100回関東大学サッカーリーグ戦【1部】 対中央大学",
+    "venue": "中央大学多摩キャンパスサッカー場",
+    "venue_address": "東京都日野市程久保5-9-2",
+    "url": "https://www.jufa-kanto.jp/files/co/news/league/2026/%E2%80%BB%E8%A8%82%E6%AD%A3%280629%29100th_%E6%97%A5%E7%A8%8B%E8%A1%A8%28%E5%85%83%E3%83%87%E3%83%BC%E3%82%BF%29.pdf",
+    "source": "AI抽出:high信頼度"
+  },
+  {
+    "date": "2026-07-16",
+    "time": "",
+    "team": "卓球部",
+    "event_name": "全日本大学総合卓球選手権・団体の部",
+    "venue": "横浜武道館",
+    "venue_address": "神奈川県横浜市中区翁町2-9-10",
+    "url": "http://www.meiji-tt.net/gametabletennis_list/",
+    "source": "AI抽出:high信頼度"
+  },
+  {
     "date": "2026-07-18",
     "time": "",
     "team": "ラクロス部（男子）",
@@ -478,6 +498,16 @@
     "venue_address": "神奈川県横浜市港北区小机町3300",
     "url": "https://meisupo.net/result/51723/",
     "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-05",
+    "time": "",
+    "team": "バレーボール部",
+    "event_name": "秋季リーグ",
+    "venue": "",
+    "venue_address": "",
+    "url": "https://meiji-volley.com/game",
+    "source": "AI抽出:high信頼度"
   },
   {
     "date": "2026-09-06",
