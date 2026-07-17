@@ -1,6 +1,6 @@
 [
   {
-    "date": "2026-07-16",
+    "date": "2026-07-17",
     "time": "",
     "team": "卓球部",
     "event_name": "全日本大学総合卓球選手権・団体の部",
@@ -53,6 +53,17 @@
     "url": "https://meisupo.net/result/page/2/",
     "official_url": "https://meisupo.net/result/page/2/",
     "source": "元父母の会 手動収集"
+  },
+  {
+    "date": "2026-07-18",
+    "time": "11:20",
+    "team": "ラクロス部（男子）",
+    "event_name": "第38回関東学生ラクロスリーグ戦　男子 対慶應義塾大学",
+    "venue": "大井ふ頭中央海浜公園ホッケー競技場メインピッチ",
+    "venue_address": "",
+    "url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=1768695961&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
+    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=1768695961&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
+    "source": "AI抽出:high信頼度"
   },
   {
     "date": "2026-07-18",
@@ -128,8 +139,19 @@
     "venue": "大井ホッケー競技場",
     "venue_address": "",
     "url": "https://meisupo.net/result/50620/",
-    "official_url": "",
+    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
     "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-09",
+    "time": "11:10",
+    "team": "ラクロス部（女子）",
+    "event_name": "第38回関東学生ラクロスリーグ戦　女子 対法政大学",
+    "venue": "大井ふ頭中央海浜公園ホッケー競技場サブピッチ",
+    "venue_address": "",
+    "url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
+    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
+    "source": "AI抽出:high信頼度"
   },
   {
     "date": "2026-08-11",
