@@ -1,16 +1,5 @@
 [
   {
-    "date": "2026-07-17",
-    "time": "",
-    "team": "卓球部",
-    "event_name": "全日本大学総合卓球選手権・団体の部",
-    "venue": "横浜武道館",
-    "venue_address": "神奈川県横浜市中区翁町2-9-10",
-    "url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "source": "AI抽出:high信頼度"
-  },
-  {
     "date": "2026-07-18",
     "time": "",
     "team": "ラクロス部（男子）",
@@ -29,7 +18,7 @@
     "venue": "横浜武道館",
     "venue_address": "神奈川県横浜市中区翁町2-9-10",
     "url": "https://meisupo.net/result/51452/",
-    "official_url": "",
+    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
     "source": "meisupo.net"
   },
   {
@@ -41,6 +30,17 @@
     "venue_address": "",
     "url": "https://meiji-basketball.com/fixtures-results/",
     "official_url": "https://meiji-basketball.com/fixtures-results/",
+    "source": "AI抽出:high信頼度"
+  },
+  {
+    "date": "2026-07-18",
+    "time": "",
+    "team": "卓球部",
+    "event_name": "全日本大学総合卓球選手権・団体の部",
+    "venue": "横浜武道館",
+    "venue_address": "神奈川県横浜市中区翁町2-9-10",
+    "url": "http://www.meiji-tt.net/gametabletennis_list/",
+    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
     "source": "AI抽出:high信頼度"
   },
   {
@@ -58,16 +58,16 @@
     "date": "2026-07-18",
     "time": "11:20",
     "team": "ラクロス部（男子）",
-    "event_name": "第38回関東学生ラクロスリーグ戦　男子 対慶應義塾大学",
+    "event_name": "第38回関東学生ラクロスリーグ戦 1部 Aブロック 対慶應義塾大学",
     "venue": "大井ふ頭中央海浜公園ホッケー競技場メインピッチ",
-    "venue_address": "",
+    "venue_address": "東京都品川区八潮4-1-19",
     "url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=1768695961&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
     "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=1768695961&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
     "source": "AI抽出:high信頼度"
   },
   {
     "date": "2026-07-18",
-    "time": "16:45",
+    "time": "17:10",
     "team": "競走部",
     "event_name": "ホクレン・ディスタンスチャレンジ2026 士別大会",
     "venue": "士別市陸上競技場",
@@ -148,7 +148,7 @@
     "team": "ラクロス部（女子）",
     "event_name": "第38回関東学生ラクロスリーグ戦　女子 対法政大学",
     "venue": "大井ふ頭中央海浜公園ホッケー競技場サブピッチ",
-    "venue_address": "",
+    "venue_address": "東京都大田区東海1-2-1",
     "url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
     "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
     "source": "AI抽出:high信頼度"
@@ -680,6 +680,17 @@
     "url": "https://meisupo.net/result/51696/",
     "official_url": "",
     "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-12",
+    "time": "15:30",
+    "team": "ラグビー部",
+    "event_name": "関東大学対抗戦 対青山学院大学",
+    "venue": "秩父宮ラグビー場",
+    "venue_address": "東京都港区北青山2−8−35",
+    "url": "https://www.meijirugby.jp/matches/",
+    "official_url": "https://www.meijirugby.jp/matches/",
+    "source": "AI抽出:high信頼度"
   },
   {
     "date": "2026-09-13",
