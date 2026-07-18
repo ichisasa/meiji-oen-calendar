@@ -66,20 +66,44 @@ def attach_official_urls(items):
     明スポ(meisupo.net)由来のイベントに対して、同じ（団体・日付）の情報が
     公式サイト系ソース（events.csv/big6/AI抽出）にもあれば、そちらのURLを
     official_url として付与する。見つからなければ空文字のまま。
+
+    さらに、official_urlとして採用された側の元イベントは「同じ試合の重複」なので、
+    最終的な一覧からは除外する（明スポ側のカード1枚にまとめる）。
     """
     official_lookup = {}
     for i in items:
-        if i["source"] != "meisupo.net" and i["date"] is not None:
+        # 「元父母の会 手動収集」は古いデータが混ざっている可能性があるため、
+        # official_urlの紐付け候補には使わない（AI抽出・big6など自動収集のみ対象）
+        is_reliable_official_source = (
+            i["source"] != "meisupo.net" and i["source"] != "元父母の会 手動収集"
+        )
+        if is_reliable_official_source and i["date"] is not None:
             key = (i["team"], i["date"])
             official_lookup.setdefault(key, i["url"])
 
+    matched_official_urls = set()
     for i in items:
         if i["source"] == "meisupo.net":
-            i["official_url"] = official_lookup.get((i["team"], i["date"]), "")
+            official_url = official_lookup.get((i["team"], i["date"]), "")
+            i["official_url"] = official_url
+            if official_url:
+                matched_official_urls.add(official_url)
         else:
             # 明スポ以外はURL自体がすでに公式寄りの情報源なので、そのまま使う
             i["official_url"] = i["url"]
-    return items
+
+    # 明スポ側に統合された、重複元の非meisupoイベントを除外する
+    # 明スポ側に統合された、重複元イベントを除外する
+    # （手動収集データは対象外＝万一URLが一致しても誤って消えないようにする）
+    result = [
+        i for i in items
+        if not (
+            i["source"] != "meisupo.net"
+            and i["source"] != "元父母の会 手動収集"
+            and i["url"] in matched_official_urls
+        )
+    ]
+    return result
 
 
 def build_calendar(sources, resolver, today=None):
