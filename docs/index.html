@@ -200,6 +200,8 @@ async function main() {
     const day = d.getDate();
     const wd = WEEKDAYS[d.getDay()];
     const isMeisupo = ev.source === "meisupo.net";
+    const isAiExtracted = typeof ev.source === "string" && ev.source.startsWith("AI抽出");
+    const isManual = ev.source === "元父母の会 手動収集";
 
     const venueLine = ev.venue
       ? `<div>📍 ${escapeHtml(ev.venue)}</div>`
@@ -213,8 +215,16 @@ async function main() {
       ? `<div><a class="${linkClass}" href="${escapeHtml(ev.url)}" target="_blank" rel="noopener">${linkLabel}</a></div>`
       : "";
 
+    // 明スポ記事とは別に、主催者側の公式URLが分かっている場合はそちらも案内する
+    const hasOfficialUrl = ev.official_url && ev.official_url !== ev.url;
+    const officialLine = isMeisupo && hasOfficialUrl
+      ? `<div><a href="${escapeHtml(ev.official_url)}" target="_blank" rel="noopener">主催者の公式情報を確認 →</a></div>`
+      : "";
+
     const sourceTag = isMeisupo
       ? `<span class="source-tag meisupo">取材:明大スポーツ新聞部</span>`
+      : isAiExtracted
+      ? `<span class="source-tag">自動収集（公式サイト）</span>`
       : `<span class="source-tag">元父母の会</span>`;
 
     html += `
@@ -229,6 +239,7 @@ async function main() {
           <div class="meta">
             ${venueLine}
             ${urlLine}
+            ${officialLine}
           </div>
         </div>
       </div>
@@ -249,4 +260,3 @@ main();
 
 </body>
 </html>
-
