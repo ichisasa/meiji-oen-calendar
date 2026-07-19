@@ -69,6 +69,9 @@ def attach_official_urls(items):
 
     さらに、official_urlとして採用された側の元イベントは「同じ試合の重複」なので、
     最終的な一覧からは除外する（明スポ側のカード1枚にまとめる）。
+
+    URL文字列の単純な集合ではなく (団体, 日付, URL) の組み合わせで照合することで、
+    同じURLを共有する他の日付のイベントまで誤って除外しないようにしている。
     """
     official_lookup = {}
     for i in items:
@@ -81,26 +84,26 @@ def attach_official_urls(items):
             key = (i["team"], i["date"])
             official_lookup.setdefault(key, i["url"])
 
-    matched_official_urls = set()
+    matched_keys = set()  # (team, date, url) の組み合わせで、実際に紐付けに使われたものだけを記録
     for i in items:
         if i["source"] == "meisupo.net":
-            official_url = official_lookup.get((i["team"], i["date"]), "")
+            key = (i["team"], i["date"])
+            official_url = official_lookup.get(key, "")
             i["official_url"] = official_url
             if official_url:
-                matched_official_urls.add(official_url)
+                matched_keys.add((i["team"], i["date"], official_url))
         else:
             # 明スポ以外はURL自体がすでに公式寄りの情報源なので、そのまま使う
             i["official_url"] = i["url"]
 
-    # 明スポ側に統合された、重複元の非meisupoイベントを除外する
     # 明スポ側に統合された、重複元イベントを除外する
-    # （手動収集データは対象外＝万一URLが一致しても誤って消えないようにする）
+    # （手動収集データは対象外＝万一一致しても誤って消えないようにする）
     result = [
         i for i in items
         if not (
             i["source"] != "meisupo.net"
             and i["source"] != "元父母の会 手動収集"
-            and i["url"] in matched_official_urls
+            and (i["team"], i["date"], i["url"]) in matched_keys
         )
     ]
     return result
