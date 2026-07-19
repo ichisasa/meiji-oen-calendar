@@ -1,38 +1,5 @@
 [
   {
-    "date": "2026-07-18",
-    "time": "",
-    "team": "ラクロス部（男子）",
-    "event_name": "関東学生ラクロス１部リーグ戦",
-    "venue": "大井ホッケー競技場",
-    "venue_address": "",
-    "url": "https://meisupo.net/result/50624/",
-    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=1768695961&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
-    "source": "meisupo.net"
-  },
-  {
-    "date": "2026-07-18",
-    "time": "",
-    "team": "卓球部",
-    "event_name": "全日本大学総合卓球選手権大会・団体の部",
-    "venue": "横浜武道館",
-    "venue_address": "神奈川県横浜市中区翁町2-9-10",
-    "url": "https://meisupo.net/result/51452/",
-    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "source": "meisupo.net"
-  },
-  {
-    "date": "2026-07-18",
-    "time": "11:20",
-    "team": "ラクロス部（男子）",
-    "event_name": "関東リーグ　対慶應",
-    "venue": "大井ホッケー競技場メインピッチ",
-    "venue_address": "東京都品川区八潮4-1-19",
-    "url": "https://meisupo.net/result/page/2/",
-    "official_url": "https://meisupo.net/result/page/2/",
-    "source": "元父母の会 手動収集"
-  },
-  {
     "date": "2026-07-19",
     "time": "",
     "team": "競走部",
@@ -40,8 +7,19 @@
     "venue": "法政大学多摩校地",
     "venue_address": "",
     "url": "https://meisupo.net/result/51721/",
-    "official_url": "https://meiji-kyoso.com/schedule",
+    "official_url": "",
     "source": "meisupo.net"
+  },
+  {
+    "date": "2026-07-21",
+    "time": "",
+    "team": "競走部",
+    "event_name": "第33回相模原マンスリーナイタースプリント公認記録会",
+    "venue": "相模原ギオンスタジアム",
+    "venue_address": "",
+    "url": "https://meiji-kyoso.com/schedule",
+    "official_url": "https://meiji-kyoso.com/schedule",
+    "source": "AI抽出:high信頼度"
   },
   {
     "date": "2026-07-25",
@@ -77,6 +55,17 @@
     "source": "元父母の会 手動収集"
   },
   {
+    "date": "2026-08-05",
+    "time": "",
+    "team": "卓球部",
+    "event_name": "全日本大学総合卓球選手権・個人の部（関東予選）",
+    "venue": "所沢市民体育館",
+    "venue_address": "",
+    "url": "http://www.meiji-tt.net/gametabletennis_list/",
+    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
+    "source": "AI抽出:high信頼度"
+  },
+  {
     "date": "2026-08-07",
     "time": "",
     "team": "硬式庭球部",
@@ -106,7 +95,7 @@
     "venue": "駒沢オリンピック公園第一球技場",
     "venue_address": "東京都世田谷区駒沢公園1",
     "url": "https://meisupo.net/result/50626/",
-    "official_url": "",
+    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=1768695961&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
     "source": "meisupo.net"
   },
   {
