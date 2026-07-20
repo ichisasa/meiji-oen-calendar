@@ -8,3 +8,4 @@ team,url,note
 卓球部,http://www.meiji-tt.net/gametabletennis_list/,明治大学卓球部公式サイト。2026年度シーズン全体が1ページの表にまとまっている（連盟サイトkanto-sttf.jpより格段に扱いやすい）
 ラクロス部（男子）,https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=1768695961&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25,第38回関東学生ラクロスリーグ戦 男子の日程表&結果（Googleスプレッドシート→PDF出力）。シーズンごとにシートIDが変わる可能性あり
 ラクロス部（女子）,https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25,第38回関東学生ラクロスリーグ戦 女子の日程表&結果（Googleスプレッドシート→PDF出力）。シーズンごとにシートIDが変わる可能性あり
+柔道部,http://www.gakujuren.or.jp/,全日本学生柔道連盟公式サイトのトップページ。2026年度の全国大会日程が一覧掲載されている。Shift-JISサイトのため文字コード自動判定に対応済み
