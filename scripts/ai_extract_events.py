@@ -81,6 +81,12 @@ def fetch_page_text(url: str) -> str:
     if is_pdf:
         text = extract_pdf_text(resp.content)
     else:
+        # 古いサイトはShift-JIS等、UTF-8以外の文字コードのことがある。
+        # resp.textはHTTPヘッダのcharsetを鵜呑みにして文字化けすることがあるため、
+        # 実際のバイト列から文字コードを推定し直す。
+        detected_encoding = resp.apparent_encoding
+        if detected_encoding:
+            resp.encoding = detected_encoding
         soup = BeautifulSoup(resp.text, "html.parser")
         for tag in soup(["script", "style", "nav", "footer"]):
             tag.decompose()
