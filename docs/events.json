@@ -1,16 +1,5 @@
 [
   {
-    "date": "2026-07-21",
-    "time": "",
-    "team": "競走部",
-    "event_name": "第33回相模原マンスリーナイタースプリント公認記録会",
-    "venue": "相模原ギオンスタジアム",
-    "venue_address": "",
-    "url": "https://meiji-kyoso.com/schedule",
-    "official_url": "https://meiji-kyoso.com/schedule",
-    "source": "AI抽出:high信頼度"
-  },
-  {
     "date": "2026-07-25",
     "time": "",
     "team": "自転車部",
@@ -22,6 +11,17 @@
     "source": "元父母の会 手動収集"
   },
   {
+    "date": "2026-07-26",
+    "time": "",
+    "team": "競走部",
+    "event_name": "第７４回 平塚市ナイター陸上記録会",
+    "venue": "レモンガス スタジアム平塚",
+    "venue_address": "神奈川県平塚市大原1-1",
+    "url": "https://meiji-kyoso.com/schedule",
+    "official_url": "https://meiji-kyoso.com/schedule",
+    "source": "AI抽出:high信頼度"
+  },
+  {
     "date": "2026-08-02",
     "time": "13:00",
     "team": "落語研究会",
@@ -31,6 +31,28 @@
     "url": "https://x.com/piroshai/status/2060996215605723181/photo/1",
     "official_url": "https://x.com/piroshai/status/2060996215605723181/photo/1",
     "source": "元父母の会 手動収集"
+  },
+  {
+    "date": "2026-08-04",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "第64回関東女子学生選手権",
+    "venue": "平川カントリークラブ",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51843/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-04",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "第74回関東学生選手権",
+    "venue": "鷹之台カンツリー倶楽部",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51846/",
+    "official_url": "",
+    "source": "meisupo.net"
   },
   {
     "date": "2026-08-05",
@@ -220,6 +242,28 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-08-25",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "2026年度（第76回）日本学生選手権競技",
+    "venue": "三甲ゴルフ倶楽部谷汲コース",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51848/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-26",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "2026年度（第62回）日本女子学生ゴルフ選手権競技",
+    "venue": "三甲ゴルフ倶楽部谷汲コース",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51850/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-08-27",
     "time": "14:30",
     "team": "バスケットボール部（男子）",
@@ -403,6 +447,17 @@
     "venue": "栃木県ライフル射撃場",
     "venue_address": "栃木県宇都宮市新里町乙1067",
     "url": "https://meisupo.net/result/49442/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-03",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "2026年度関東女子大学秋季ABCブロックリーグ戦",
+    "venue": "杉ノ郷カントリークラブ",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51852/",
     "official_url": "",
     "source": "meisupo.net"
   },
@@ -667,6 +722,17 @@
     "venue": "港区スポーツセンター",
     "venue_address": "東京都港区芝浦1-16-1（みなとパーク芝浦内3〜8階）",
     "url": "https://meisupo.net/result/51475/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-14",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "2026年度関東大学秋季Ａブロックリーグ戦",
+    "venue": "こだまゴルフクラブ",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51854/",
     "official_url": "",
     "source": "meisupo.net"
   },
