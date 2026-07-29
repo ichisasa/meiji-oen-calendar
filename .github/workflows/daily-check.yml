@@ -9,7 +9,6 @@ permissions:
   contents: write        # ブランチへのコミットに必要
   pull-requests: write   # Pull Requestの作成・更新に必要
 
-
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -40,6 +39,12 @@ jobs:
       - name: Build public calendar
         run: python scripts/build_public_calendar.py
 
+      - name: Find official URLs via Grounding (experimental)
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python scripts/find_official_urls.py
+        continue-on-error: true  # Grounding機能が使えない場合でも他の処理を止めない
+
       - name: Run missing-club check
         run: python scripts/check_missing_clubs.py
         continue-on-error: true  # チェック結果はあくまで参考情報なので、失敗しても全体を止めない
@@ -51,9 +56,12 @@ jobs:
           title: "📅 自動データ更新 (${{ github.run_id }})"
           body: |
             明スポ(meisupo.net)から自動収集した最新データです。
+
             マージ前に以下を確認してください:
             - 会場や日程がおかしい行がないか(明スポ側の記事ミスの可能性あり)
             - `data/missing_clubs_report.md` に新しい「未解決の団体名」が出ていないか
+            - `find_official_urls.py`のログで、Grounding検索が使えたかどうか確認
+
             問題なければマージ、修正が必要ならこのPR上で直接編集してからマージしてください。
           branch: automated/data-update
           delete-branch: true
