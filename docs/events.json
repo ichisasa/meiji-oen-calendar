@@ -1,93 +1,5 @@
 [
   {
-    "date": "2026-07-21",
-    "time": "",
-    "team": "競走部",
-    "event_name": "第33回相模原マンスリーナイタースプリント公認記録会",
-    "venue": "相模原ギオンスタジアム",
-    "venue_address": "",
-    "url": "https://meiji-kyoso.com/schedule",
-    "official_url": "https://meiji-kyoso.com/schedule",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-07-25",
-    "time": "",
-    "team": "自転車部",
-    "event_name": "全日本学生RCS第4戦 第20回白馬クリテリウムラウンド",
-    "venue": "長野県白馬村",
-    "venue_address": "長野県白馬村",
-    "url": "https://jicf.info/30976/",
-    "official_url": "https://jicf.info/30976/",
-    "source": "元父母の会 手動収集"
-  },
-  {
-    "date": "2026-08-02",
-    "time": "13:00",
-    "team": "落語研究会",
-    "event_name": "第2回新さっぽろ全国大学対抗新作落語選手権",
-    "venue": "新さっぽろアークシティホテル",
-    "venue_address": "北海道札幌市厚別区厚別中央２条５丁目６−２",
-    "url": "https://x.com/piroshai/status/2060996215605723181/photo/1",
-    "official_url": "https://x.com/piroshai/status/2060996215605723181/photo/1",
-    "source": "元父母の会 手動収集"
-  },
-  {
-    "date": "2026-08-05",
-    "time": "",
-    "team": "ヨット部",
-    "event_name": "全日本スナイプ",
-    "venue": "富山新港",
-    "venue_address": "〒934-0024 富山県射水市越の潟町5",
-    "url": "https://drive.google.com/file/d/1LM36sQK-F901lnCGJPEgRwL4Z14fQcB_/view",
-    "official_url": "https://drive.google.com/file/d/1LM36sQK-F901lnCGJPEgRwL4Z14fQcB_/view",
-    "source": "元父母の会 手動収集"
-  },
-  {
-    "date": "2026-08-05",
-    "time": "",
-    "team": "卓球部",
-    "event_name": "全日本大学総合卓球選手権・個人の部（関東予選）",
-    "venue": "所沢市民体育館",
-    "venue_address": "",
-    "url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-08-07",
-    "time": "",
-    "team": "硬式庭球部",
-    "event_name": "全日本学生室内テニス選手権大会",
-    "venue": "有明テニスの森",
-    "venue_address": "東京都江東区有明2-2-22",
-    "url": "https://alljapanintercollegiate-tennis.r-cms.jp/gametennis_list/",
-    "official_url": "https://alljapanintercollegiate-tennis.r-cms.jp/gametennis_list/",
-    "source": "元父母の会 手動収集"
-  },
-  {
-    "date": "2026-08-09",
-    "time": "",
-    "team": "ラクロス部（女子）",
-    "event_name": "関東学生ラクロス１部リーグ戦",
-    "venue": "大井ホッケー競技場",
-    "venue_address": "",
-    "url": "https://meisupo.net/result/50620/",
-    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
-    "source": "meisupo.net"
-  },
-  {
-    "date": "2026-08-11",
-    "time": "",
-    "team": "ラクロス部（男子）",
-    "event_name": "関東学生ラクロス１部リーグ戦",
-    "venue": "駒沢オリンピック公園第一球技場",
-    "venue_address": "東京都世田谷区駒沢公園1",
-    "url": "https://meisupo.net/result/50626/",
-    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=1768695961&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
-    "source": "meisupo.net"
-  },
-  {
     "date": "2026-08-13",
     "time": "",
     "team": "水泳部（水球）",
@@ -130,6 +42,17 @@
     "url": "https://meisupo.net/result/51634/",
     "official_url": "",
     "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-15",
+    "time": "09:00",
+    "team": "競走部",
+    "event_name": "第158回日本体育大学陸上競技会",
+    "venue": "日本体育大学横浜・健志台キャンパス陸上競技場",
+    "venue_address": "",
+    "url": "https://meiji-kyoso.com/schedule",
+    "official_url": "https://meiji-kyoso.com/schedule",
+    "source": "AI抽出:high信頼度"
   },
   {
     "date": "2026-08-16",
@@ -220,6 +143,39 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-08-25",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "2026年度（第76回）日本学生選手権競技",
+    "venue": "三甲ゴルフ倶楽部谷汲コース",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51848/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-08-25",
+    "time": "",
+    "team": "卓球部",
+    "event_name": "関東学生チームカップ",
+    "venue": "駒沢体育館",
+    "venue_address": "",
+    "url": "http://www.meiji-tt.net/gametabletennis_list/",
+    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
+    "source": "AI抽出:high信頼度"
+  },
+  {
+    "date": "2026-08-26",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "2026年度（第62回）日本女子学生ゴルフ選手権競技",
+    "venue": "三甲ゴルフ倶楽部谷汲コース",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51850/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-08-27",
     "time": "14:30",
     "team": "バスケットボール部（男子）",
@@ -293,7 +249,7 @@
     "venue": "駒沢オリンピック公園第一球技場",
     "venue_address": "東京都世田谷区駒沢公園1",
     "url": "https://meisupo.net/result/50622/",
-    "official_url": "",
+    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
     "source": "meisupo.net"
   },
   {
@@ -403,6 +359,17 @@
     "venue": "栃木県ライフル射撃場",
     "venue_address": "栃木県宇都宮市新里町乙1067",
     "url": "https://meisupo.net/result/49442/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-03",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "2026年度関東女子大学秋季ABCブロックリーグ戦",
+    "venue": "杉ノ郷カントリークラブ",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51852/",
     "official_url": "",
     "source": "meisupo.net"
   },
@@ -572,6 +539,17 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-09-06",
+    "time": "",
+    "team": "ホッケー部",
+    "event_name": "エイワ杯関東大学リーグ戦",
+    "venue": "ダイドードリンコアイスアリーナ",
+    "venue_address": "東京都西東京市東伏見3-1-25",
+    "url": "https://meisupo.net/result/51938/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-09-07",
     "time": "",
     "team": "競走部",
@@ -660,6 +638,17 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-09-13",
+    "time": "",
+    "team": "ホッケー部",
+    "event_name": "エイワ杯関東大学リーグ戦",
+    "venue": "ダイドードリンコアイスアリーナ",
+    "venue_address": "東京都西東京市東伏見3-1-25",
+    "url": "https://meisupo.net/result/51940/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-09-14",
     "time": "",
     "team": "卓球部",
@@ -667,6 +656,17 @@
     "venue": "港区スポーツセンター",
     "venue_address": "東京都港区芝浦1-16-1（みなとパーク芝浦内3〜8階）",
     "url": "https://meisupo.net/result/51475/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-14",
+    "time": "",
+    "team": "ゴルフ部",
+    "event_name": "2026年度関東大学秋季Ａブロックリーグ戦",
+    "venue": "こだまゴルフクラブ",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/51854/",
     "official_url": "",
     "source": "meisupo.net"
   },
@@ -689,6 +689,39 @@
     "venue": "港区スポーツセンター",
     "venue_address": "東京都港区芝浦1-16-1（みなとパーク芝浦内3〜8階）",
     "url": "https://meisupo.net/result/51479/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-19",
+    "time": "11:00",
+    "team": "硬式野球部",
+    "event_name": "2026秋季リーグ戦 対東大",
+    "venue": "明治神宮野球場",
+    "venue_address": "新宿区霞ヶ丘町3-1",
+    "url": "https://www.big6.gr.jp/game/league/2026a/2026a_schedule.html",
+    "official_url": "https://www.big6.gr.jp/game/league/2026a/2026a_schedule.html",
+    "source": "AI抽出:high信頼度"
+  },
+  {
+    "date": "2026-09-20",
+    "time": "",
+    "team": "ホッケー部",
+    "event_name": "エイワ杯関東大学リーグ戦",
+    "venue": "ダイドードリンコアイスアリーナ",
+    "venue_address": "東京都西東京市東伏見3-1-25",
+    "url": "https://meisupo.net/result/51942/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-23",
+    "time": "",
+    "team": "ホッケー部",
+    "event_name": "エイワ杯関東大学リーグ戦",
+    "venue": "ダイドードリンコアイスアリーナ",
+    "venue_address": "東京都西東京市東伏見3-1-25",
+    "url": "https://meisupo.net/result/51944/",
     "official_url": "",
     "source": "meisupo.net"
   },
@@ -722,6 +755,17 @@
     "venue": "代々木第二体育館",
     "venue_address": "東京都渋谷区神南2-1-1",
     "url": "https://meisupo.net/result/51483/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-26",
+    "time": "",
+    "team": "ホッケー部",
+    "event_name": "エイワ杯関東大学リーグ戦",
+    "venue": "ダイドードリンコアイスアリーナ",
+    "venue_address": "東京都西東京市東伏見3-1-25",
+    "url": "https://meisupo.net/result/51946/",
     "official_url": "",
     "source": "meisupo.net"
   },
@@ -814,6 +858,17 @@
     "source": "meisupo.net"
   },
   {
+    "date": "2026-10-03",
+    "time": "",
+    "team": "ホッケー部",
+    "event_name": "エイワ杯関東大学リーグ戦",
+    "venue": "ダイドードリンコアイスアリーナ",
+    "venue_address": "東京都西東京市東伏見3-1-25",
+    "url": "https://meisupo.net/result/51948/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
     "date": "2026-10-10",
     "time": "",
     "team": "サッカー部",
@@ -865,6 +920,17 @@
     "venue": "日本武道館",
     "venue_address": "東京都千代田区北の丸公園2-3",
     "url": "https://meisupo.net/result/49164/",
+    "official_url": "",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-10-12",
+    "time": "",
+    "team": "ホッケー部",
+    "event_name": "エイワ杯関東大学リーグ戦",
+    "venue": "ダイドードリンコアイスアリーナ",
+    "venue_address": "東京都西東京市東伏見3-1-25",
+    "url": "https://meisupo.net/result/51950/",
     "official_url": "",
     "source": "meisupo.net"
   },
