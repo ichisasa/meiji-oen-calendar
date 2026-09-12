@@ -1,8 +1,16 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-data/events.csv（手動収集の現在データ）と data/meisupo_events.csv（自動収集データ）を
-統合し、本日以降のイベントだけを抽出して、GitHub Pages公開用の docs/events.json を作る。
+data/events.csv（手動収集）、data/meisupo_events.csv（明スポ自動収集）、
+data/big6_baseball_events.csv、data/ai_scraped_events.csv（AI抽出）を統合し、
+本日以降のイベントだけを抽出して、GitHub Pages公開用の docs/events.json を作る。
+
+【優先順位】同じ試合が複数ソースにまたがって存在する場合、以下の優先順で
+「主役カード」を選ぶ（プロジェクトの核心的価値である「主催者への確認URL」を
+できるだけ前面に出すため）:
+  1. 自動収集（AI抽出・big6等の公式サイト由来）
+  2. 明大スポーツ新聞部（meisupo.net）
+  3. 元父母の会 手動収集
 
 団体名は normalize_team.py で正式名称に統一してから出力する。
 日付が読み取れない行（「8月下旬」等）は、公開カレンダーには含めず件数だけ表示する。
@@ -11,6 +19,7 @@ data/events.csv（手動収集の現在データ）と data/meisupo_events.csv�
 import csv
 import json
 import sys
+from collections import defaultdict
 from datetime import date, datetime
 
 from normalize_team import TeamNameResolver
@@ -27,6 +36,17 @@ def parse_loose_date(text: str):
         except ValueError:
             continue
     return None
+
+
+def source_priority(source: str) -> int:
+    """数字が小さいほど優先度が高い（主役カードとして採用される）。"""
+    if isinstance(source, str) and source.startswith("AI抽出"):
+        return 0
+    if source == "big6.gr.jp":
+        return 0
+    if source == "meisupo.net":
+        return 1
+    return 2  # 元父母の会 手動収集 など
 
 
 def load_events_csv(path, resolver, venue_addresses, venue_aliases):
@@ -53,7 +73,7 @@ def load_events_csv(path, resolver, venue_addresses, venue_aliases):
                         "venue": venue,
                         "venue_address": venue_address,
                         "url": (row.get("url") or "").strip(),
-                        "source": row.get("source", "元父母の会 手動収集"),
+                        "source": row.get("source") or "元父母の会 手動収集",
                     }
                 )
     except FileNotFoundError:
@@ -61,52 +81,37 @@ def load_events_csv(path, resolver, venue_addresses, venue_aliases):
     return items
 
 
-def attach_official_urls(items):
+def merge_duplicate_events(items):
     """
-    明スポ(meisupo.net)由来のイベントに対して、同じ（団体・日付）の情報が
-    公式サイト系ソース（events.csv/big6/AI抽出）にもあれば、そちらのURLを
-    official_url として付与する。見つからなければ空文字のまま。
-
-    さらに、official_urlとして採用された側の元イベントは「同じ試合の重複」なので、
-    最終的な一覧からは除外する（明スポ側のカード1枚にまとめる）。
-
-    URL文字列の単純な集合ではなく (団体, 日付, URL) の組み合わせで照合することで、
-    同じURLを共有する他の日付のイベントまで誤って除外しないようにしている。
+    団体名+日付が一致するイベントを1件に統合する。
+    イベント名はキーに含めない（明スポとAI抽出で表現が違うことが多いため）。
+    優先順位が最も高いソースの内容を「主役」として採用し、
+    明スポのURLは meisupo_url として、公式サイト系のURLは official_url として保持する。
     """
-    official_lookup = {}
+    groups = defaultdict(list)
     for i in items:
-        # 「元父母の会 手動収集」は古いデータが混ざっている可能性があるため、
-        # official_urlの紐付け候補には使わない（AI抽出・big6など自動収集のみ対象）
-        is_reliable_official_source = (
-            i["source"] != "meisupo.net" and i["source"] != "元父母の会 手動収集"
-        )
-        if is_reliable_official_source and i["date"] is not None:
-            key = (i["team"], i["date"])
-            official_lookup.setdefault(key, i["url"])
+        key = (i["team"], i["date"])
+        groups[key].append(i)
 
-    matched_keys = set()  # (team, date, url) の組み合わせで、実際に紐付けに使われたものだけを記録
-    for i in items:
-        if i["source"] == "meisupo.net":
-            key = (i["team"], i["date"])
-            official_url = official_lookup.get(key, "")
-            i["official_url"] = official_url
-            if official_url:
-                matched_keys.add((i["team"], i["date"], official_url))
-        else:
-            # 明スポ以外はURL自体がすでに公式寄りの情報源なので、そのまま使う
-            i["official_url"] = i["url"]
+    merged = []
+    for key, group in groups.items():
+        group.sort(key=lambda e: source_priority(e["source"]))
+        primary = group[0]
 
-    # 明スポ側に統合された、重複元イベントを除外する
-    # （手動収集データは対象外＝万一一致しても誤って消えないようにする）
-    result = [
-        i for i in items
-        if not (
-            i["source"] != "meisupo.net"
-            and i["source"] != "元父母の会 手動収集"
-            and (i["team"], i["date"], i["url"]) in matched_keys
-        )
-    ]
-    return result
+        official_url = ""
+        meisupo_url = ""
+        for e in group:
+            if e["source"] == "meisupo.net" and not meisupo_url:
+                meisupo_url = e["url"]
+            elif e["source"] != "meisupo.net" and not official_url:
+                official_url = e["url"]
+
+        merged_event = dict(primary)
+        merged_event["official_url"] = official_url
+        merged_event["meisupo_url"] = meisupo_url
+        merged.append(merged_event)
+
+    return merged
 
 
 def build_calendar(sources, resolver, today=None):
@@ -120,26 +125,17 @@ def build_calendar(sources, resolver, today=None):
     for path in sources:
         all_items.extend(load_events_csv(path, resolver, venue_addresses, venue_aliases))
 
-    # URLが同じものは重複とみなし、1件にまとめる
-    seen_urls = set()
-    deduped = []
-    for item in all_items:
-        key = item["url"] or f"{item['team']}|{item['event_name']}|{item['date_raw']}"
-        if key in seen_urls:
-            continue
-        seen_urls.add(key)
-        deduped.append(item)
+    with_date = [i for i in all_items if i["date"] is not None]
+    without_date = len(all_items) - len(with_date)
 
-    with_date = [i for i in deduped if i["date"] is not None]
-    without_date = len(deduped) - len(with_date)
-    with_date = attach_official_urls(with_date)
+    merged = merge_duplicate_events(with_date)
 
-    upcoming = [i for i in with_date if i["date"] >= today]
+    upcoming = [i for i in merged if i["date"] >= today]
     upcoming.sort(key=lambda i: (i["date"], i["time"]))
 
     print(
-        f"統合: {len(deduped)}件（重複除去後）/ 日付不明でスキップ: {without_date}件 / "
-        f"本日以降で公開対象: {len(upcoming)}件",
+        f"統合前: {len(all_items)}件 / 日付不明でスキップ: {without_date}件 / "
+        f"重複統合後: {len(merged)}件 / 本日以降で公開対象: {len(upcoming)}件",
         file=sys.stderr,
     )
     return upcoming
@@ -158,6 +154,7 @@ def to_json_ready(items):
                 "venue_address": i["venue_address"],
                 "url": i["url"],
                 "official_url": i.get("official_url", ""),
+                "meisupo_url": i.get("meisupo_url", ""),
                 "source": i["source"],
             }
         )
