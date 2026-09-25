@@ -1,197 +1,5 @@
 [
   {
-    "date": "2026-09-14",
-    "time": "",
-    "team": "卓球部",
-    "event_name": "関東学生秋季リーグ戦",
-    "venue": "港区スポーツセンター",
-    "venue_address": "東京都港区芝浦1-16-1（みなとパーク芝浦内3〜8階）",
-    "url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "meisupo_url": "https://meisupo.net/result/51475/",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-14",
-    "time": "",
-    "team": "ゴルフ部",
-    "event_name": "2026年度関東大学秋季Ａブロックリーグ戦",
-    "venue": "こだまゴルフクラブ",
-    "venue_address": "",
-    "url": "https://meisupo.net/result/51854/",
-    "official_url": "",
-    "meisupo_url": "https://meisupo.net/result/51854/",
-    "source": "meisupo.net"
-  },
-  {
-    "date": "2026-09-14",
-    "time": "15:00",
-    "team": "バスケットボール部（男子）",
-    "event_name": "明治大 vs 中央大学",
-    "venue": "明治大学和泉キャンパス",
-    "venue_address": "東京都杉並区永福1-9-1",
-    "url": "https://www.kcbbf.jp/index/show-pdf/url/aHR0cHM6Ly9kMmEwdjF4N3F2eGw2Yy5jbG91ZGZyb250Lm5ldC9maWxlcy9zcG9ocF9rY2JiZi9nYW1lX2NhdGVnb3J5LzY4Y2ZhMjQxZWQyNmEucGRm",
-    "official_url": "https://www.kcbbf.jp/index/show-pdf/url/aHR0cHM6Ly9kMmEwdjF4N3F2eGw2Yy5jbG91ZGZyb250Lm5ldC9maWxlcy9zcG9ocF9rY2JiZi9nYW1lX2NhdGVnb3J5LzY4Y2ZhMjQxZWQyNmEucGRm",
-    "meisupo_url": "",
-    "source": "元父母の会 手動収集"
-  },
-  {
-    "date": "2026-09-15",
-    "time": "",
-    "team": "卓球部",
-    "event_name": "関東学生秋季リーグ戦",
-    "venue": "港区スポーツセンター",
-    "venue_address": "東京都港区芝浦1-16-1（みなとパーク芝浦内3〜8階）",
-    "url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "meisupo_url": "https://meisupo.net/result/51477/",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-16",
-    "time": "",
-    "team": "卓球部",
-    "event_name": "関東学生秋季リーグ戦",
-    "venue": "港区スポーツセンター",
-    "venue_address": "東京都港区芝浦1-16-1（みなとパーク芝浦内3〜8階）",
-    "url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "official_url": "http://www.meiji-tt.net/gametabletennis_list/",
-    "meisupo_url": "https://meisupo.net/result/51479/",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-16",
-    "time": "16:40",
-    "team": "競走部",
-    "event_name": "第12回Tokai Sprint Games",
-    "venue": "レモンガススタジアム平塚",
-    "venue_address": "神奈川県平塚市大原1-1",
-    "url": "https://meiji-kyoso.com/schedule",
-    "official_url": "https://meiji-kyoso.com/schedule",
-    "meisupo_url": "",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-19",
-    "time": "",
-    "team": "ヨット部",
-    "event_name": "全日本女子",
-    "venue": "葉山港",
-    "venue_address": "神奈川県三浦郡葉山町堀内50",
-    "url": "https://drive.google.com/file/d/1LM36sQK-F901lnCGJPEgRwL4Z14fQcB_/view",
-    "official_url": "https://drive.google.com/file/d/1LM36sQK-F901lnCGJPEgRwL4Z14fQcB_/view",
-    "meisupo_url": "",
-    "source": "元父母の会 手動収集"
-  },
-  {
-    "date": "2026-09-19",
-    "time": "10:00",
-    "team": "競走部",
-    "event_name": "第159回日本体育大学陸上競技大会",
-    "venue": "日本体育大学横浜・健志台キャンパス陸上競技場",
-    "venue_address": "",
-    "url": "https://meiji-kyoso.com/schedule",
-    "official_url": "https://meiji-kyoso.com/schedule",
-    "meisupo_url": "",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-19",
-    "time": "11:00",
-    "team": "硬式野球部",
-    "event_name": "2026秋季リーグ戦 対東大",
-    "venue": "明治神宮野球場",
-    "venue_address": "新宿区霞ヶ丘町3-1",
-    "url": "https://www.big6.gr.jp/game/league/2026a/2026a_schedule.html",
-    "official_url": "https://www.big6.gr.jp/game/league/2026a/2026a_schedule.html",
-    "meisupo_url": "https://meisupo.net/result/52387/",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-20",
-    "time": "",
-    "team": "ホッケー部",
-    "event_name": "エイワ杯関東大学リーグ戦",
-    "venue": "ダイドードリンコアイスアリーナ",
-    "venue_address": "東京都西東京市東伏見3-1-25",
-    "url": "https://meisupo.net/result/51942/",
-    "official_url": "",
-    "meisupo_url": "https://meisupo.net/result/51942/",
-    "source": "meisupo.net"
-  },
-  {
-    "date": "2026-09-20",
-    "time": "10:00",
-    "team": "競走部",
-    "event_name": "第159回日本体育大学陸上競技大会",
-    "venue": "日本体育大学横浜・健志台キャンパス陸上競技場",
-    "venue_address": "",
-    "url": "https://meiji-kyoso.com/schedule",
-    "official_url": "https://meiji-kyoso.com/schedule",
-    "meisupo_url": "",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-20",
-    "time": "11:00",
-    "team": "硬式野球部",
-    "event_name": "2026秋季リーグ戦 対東大",
-    "venue": "明治神宮野球場",
-    "venue_address": "新宿区霞ヶ丘町3-1",
-    "url": "https://www.big6.gr.jp/game/league/2026a/2026a_schedule.html",
-    "official_url": "https://www.big6.gr.jp/game/league/2026a/2026a_schedule.html",
-    "meisupo_url": "https://meisupo.net/result/52390/",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-23",
-    "time": "",
-    "team": "ホッケー部",
-    "event_name": "エイワ杯関東大学リーグ戦",
-    "venue": "ダイドードリンコアイスアリーナ",
-    "venue_address": "東京都西東京市東伏見3-1-25",
-    "url": "https://meisupo.net/result/51944/",
-    "official_url": "",
-    "meisupo_url": "https://meisupo.net/result/51944/",
-    "source": "meisupo.net"
-  },
-  {
-    "date": "2026-09-23",
-    "time": "",
-    "team": "バスケットボール部（男子）",
-    "event_name": "第102回関東大学バスケットボールリーグ戦 第12節 対白鷗大学",
-    "venue": "",
-    "venue_address": "",
-    "url": "https://meiji-basketball.com/fixtures-results/",
-    "official_url": "https://meiji-basketball.com/fixtures-results/",
-    "meisupo_url": "",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-23",
-    "time": "09:20",
-    "team": "ラクロス部（女子）",
-    "event_name": "第38回関東学生ラクロスリーグ戦　女子 1部 Bブロック 対東京農業大学",
-    "venue": "駒沢オリンピック公園総合運動場補助競技場",
-    "venue_address": "",
-    "url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
-    "official_url": "https://docs.google.com/spreadsheets/d/1k7Yxty0ylKVp7TbmlAMwcHOCVXprQRsHMDPD31MEGnw/export?format=pdf&gid=2122775238&size=A4&fitw=true&portrait=true&sheetnames=false&printtitle=false&pagenumbers=false&gridlines=false&top_margin=0.25&bottom_margin=0.25&left_margin=0.25&right_margin=0.25",
-    "meisupo_url": "",
-    "source": "AI抽出:high信頼度"
-  },
-  {
-    "date": "2026-09-23",
-    "time": "18:00",
-    "team": "サッカー部",
-    "event_name": "JR東日本カップ2026 第100回関東大学サッカーリーグ戦【1部】 対中央大学",
-    "venue": "中央大学多摩キャンパスサッカー場",
-    "venue_address": "東京都日野市程久保5-9-2",
-    "url": "https://www.jufa-kanto.jp/files/co/news/league/2026/%E2%80%BB%E8%A8%82%E6%AD%A3%280629%29100th_%E6%97%A5%E7%A8%8B%E8%A1%A8%28%E5%85%83%E3%83%87%E3%83%BC%E3%82%BF%29.pdf",
-    "official_url": "https://www.jufa-kanto.jp/files/co/news/league/2026/%E2%80%BB%E8%A8%82%E6%AD%A3%280629%29100th_%E6%97%A5%E7%A8%8B%E8%A1%A8%28%E5%85%83%E3%83%87%E3%83%BC%E3%82%BF%29.pdf",
-    "meisupo_url": "https://meisupo.net/result/47772/",
-    "source": "AI抽出:high信頼度"
-  },
-  {
     "date": "2026-09-25",
     "time": "",
     "team": "卓球部",
@@ -237,6 +45,18 @@
     "url": "https://meisupo.net/result/51946/",
     "official_url": "",
     "meisupo_url": "https://meisupo.net/result/51946/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-26",
+    "time": "",
+    "team": "ハンドボール部",
+    "event_name": "関東学生秋季リーグ戦　第６戦",
+    "venue": "日大八幡山体育館",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/53128/",
+    "official_url": "",
+    "meisupo_url": "https://meisupo.net/result/53128/",
     "source": "meisupo.net"
   },
   {
@@ -321,6 +141,18 @@
     "url": "https://meisupo.net/result/51580/",
     "official_url": "",
     "meisupo_url": "https://meisupo.net/result/51580/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-09-27",
+    "time": "",
+    "team": "ハンドボール部",
+    "event_name": "関東学生秋季リーグ戦　第７戦",
+    "venue": "日大八幡山体育館",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/53131/",
+    "official_url": "",
+    "meisupo_url": "https://meisupo.net/result/53131/",
     "source": "meisupo.net"
   },
   {
@@ -469,6 +301,18 @@
   },
   {
     "date": "2026-10-03",
+    "time": "",
+    "team": "ハンドボール部",
+    "event_name": "関東学生秋季リーグ戦　第８戦",
+    "venue": "中大多摩キャンパス",
+    "venue_address": "東京都日野市程久保5-9-2",
+    "url": "https://meisupo.net/result/53133/",
+    "official_url": "",
+    "meisupo_url": "https://meisupo.net/result/53133/",
+    "source": "meisupo.net"
+  },
+  {
+    "date": "2026-10-03",
     "time": "14:00",
     "team": "サッカー部",
     "event_name": "JR東日本カップ2026 第100回関東大学サッカーリーグ戦【1部】 対駒澤大学",
@@ -490,6 +334,18 @@
     "official_url": "https://www.meijirugby.jp/matches/",
     "meisupo_url": "",
     "source": "AI抽出:high信頼度"
+  },
+  {
+    "date": "2026-10-04",
+    "time": "",
+    "team": "ハンドボール部",
+    "event_name": "関東学生秋季リーグ戦　第９戦",
+    "venue": "国士舘多摩体育館",
+    "venue_address": "",
+    "url": "https://meisupo.net/result/53135/",
+    "official_url": "",
+    "meisupo_url": "https://meisupo.net/result/53135/",
+    "source": "meisupo.net"
   },
   {
     "date": "2026-10-04",
