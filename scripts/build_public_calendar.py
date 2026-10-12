@@ -3,7 +3,7 @@
 """
 data/events.csv（手動収集）、data/meisupo_events.csv（明スポ自動収集）、
 data/big6_baseball_events.csv、data/ai_scraped_events.csv（AI抽出）を統合し、
-本日以降のイベントだけを抽出して、GitHub Pages公開用の docs/events.json を作る。
+本日から3か月先までのイベントだけを抽出して、GitHub Pages公開用の docs/events.json を作る。
 
 【優先順位】同じ試合が複数ソースにまたがって存在する場合、以下の優先順で
 「主役カード」を選ぶ（プロジェクトの核心的価値である「主催者への確認URL」を
@@ -24,6 +24,19 @@ from datetime import date, datetime
 
 from normalize_team import TeamNameResolver
 from scrape_meisupo import load_venue_addresses, load_venue_aliases, resolve_venue_address
+
+# 公開カレンダーに表示する期間（本日から何か月先まで）
+DISPLAY_MONTHS = 3
+
+
+def add_months(d: date, months: int) -> date:
+    """月末を考慮して、dからmonthsか月後の日付を返す（例: 11/30の3か月後は2/28）。"""
+    import calendar
+    total = d.year * 12 + (d.month - 1) + months
+    year, month = divmod(total, 12)
+    month += 1
+    day = min(d.day, calendar.monthrange(year, month)[1])
+    return date(year, month, day)
 
 
 def parse_loose_date(text: str):
@@ -130,12 +143,13 @@ def build_calendar(sources, resolver, today=None):
 
     merged = merge_duplicate_events(with_date)
 
-    upcoming = [i for i in merged if i["date"] >= today]
+    end_date = add_months(today, DISPLAY_MONTHS)
+    upcoming = [i for i in merged if today <= i["date"] <= end_date]
     upcoming.sort(key=lambda i: (i["date"], i["time"]))
 
     print(
         f"統合前: {len(all_items)}件 / 日付不明でスキップ: {without_date}件 / "
-        f"重複統合後: {len(merged)}件 / 本日以降で公開対象: {len(upcoming)}件",
+        f"重複統合後: {len(merged)}件 / 本日〜3か月先（{end_date}まで）の公開対象: {len(upcoming)}件",
         file=sys.stderr,
     )
     return upcoming
